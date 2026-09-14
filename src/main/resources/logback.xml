@@ -1,0 +1,17 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{0} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Debug output is off by default. Turn it on without recompiling:
+       sbt -Dshapes.log.level=DEBUG "test:runMain edu.luc.cs.laufer.cs371.shapes.Main" -->
+  <logger name="edu.luc.cs.laufer.cs371.shapes" level="${shapes.log.level:-INFO}"/>
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+
+</configuration>
